@@ -1,5 +1,5 @@
 import itertools
-with open('input') as i:
+with open('input.txt') as i:
     freq = 0
     seen = {0}
     for ln in itertools.cycle(i):
