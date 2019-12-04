@@ -1,8 +1,3 @@
-f = open('input', 'r')
-floor = 0
-for paren in f.readline():
-    if paren == '(':
-        floor += 1
-    elif paren == ')':
-        floor -= 1
-print(floor)
+f = open('input')
+parens = f.readline()
+print(sum([1 if p == '(' else -1 for p in parens]))
