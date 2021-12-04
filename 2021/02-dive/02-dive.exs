@@ -10,7 +10,13 @@ defmodule Dive do
   end
 
   def part2() do
-
+    {pos, depth, _aim} = read_input()
+    |> Enum.reduce({0, 0, 0}, fn
+      {"down", units}, {pos, depth, aim} -> {pos, depth, aim + units}
+      {"up", units}, {pos, depth, aim} -> {pos, depth, aim - units}
+      {"forward", units}, {pos, depth, aim} -> {pos + units, depth + (aim * units), aim}
+    end)
+    pos * depth
   end
 
   def read_input() do
