@@ -17,6 +17,7 @@ defmodule BinaryDiagnostic do
     |> Enum.map(fn count ->
       if count > (length(input) / 2), do: 0, else: 1
     end) |> Enum.join() |> String.to_integer(2)
+
     gamma_rate * epsilon_rate
   end
 
